@@ -76,7 +76,30 @@ export const LinkedList = () => {
     }
 
     // find(value) returns the index of the node containing value, or null if not found.
+    const find = (value) => {
+        let index = 0;
+        let current = head;
+        while (current !== null) {
+            if (current.value === value) {
+                return index;
+            }
+            current = current.nextNode;
+            index++
+        }
+        return null;
+    }
+
     // toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
+    const toString = () => {
+        let current = head;
+        let string = "";
+        while (current !== null) {
+            string += `${current.value}  -->  `;
+            current = current.nextNode;
+        }
+        return `${string}null`;
+    }
+    
     return {
         append,
         prepend,
@@ -86,6 +109,8 @@ export const LinkedList = () => {
         at,
         pop,
         contains,
+        find,
+        toString
     }
 }
 
