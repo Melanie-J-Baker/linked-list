@@ -29,7 +29,18 @@ const LinkedList = () => {
     }
 
     // tail returns the last node in the list
+
+    const tail = () => {
+        let tailNode = head;
+        if (tailNode) {
+            while (tailNode.nextNode) {
+                tailNode = tailNode.nextNode;
+            }
+        }
+        return tailNode;
+    }
     // at(index) returns the node at the given index
+
     // pop removes the last element from the list
     // contains(value) returns true if the passed in value is in the list and otherwise returns false.
     // find(value) returns the index of the node containing value, or null if not found.
@@ -39,6 +50,7 @@ const LinkedList = () => {
         prepend,
         get size(){ return size; },
         get head(){ return head; },
+        tail,
     }
 }
 
