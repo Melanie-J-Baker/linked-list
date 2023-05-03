@@ -1,6 +1,19 @@
+import LinkedList from "../linked-list/linkedlist";
 
+// Test
+const list = LinkedList();
 
-//Extra Credit
-    // insertAt(value, index) that inserts a new node with the provided value at the given index.
-    // removeAt(index) that removes the node at the given index.
-//Tip: When you insert or remove a node, consider how it will affect the existing nodes. Some of the nodes will need their nextNode link updated
+list.append(5);
+list.append(6);
+list.append(7)
+list.prepend(10);
+list.prepend(9);
+list.prepend(8);
+list.pop();
+
+console.log(list.size);
+console.log(list.head);
+console.log(list.at(1));
+console.log(list.find(10));
+console.log(list.tail());
+console.log(list.toString());

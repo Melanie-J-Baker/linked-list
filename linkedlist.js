@@ -99,7 +99,7 @@ export const LinkedList = () => {
         }
         return `${string}null`;
     }
-    
+
     return {
         append,
         prepend,
@@ -113,4 +113,9 @@ export const LinkedList = () => {
         toString
     }
 }
+
+//Extra Credit
+    // insertAt(value, index) inserts a new node with the provided value at the given index.
+    // removeAt(index) removes node at given index.
+//Tip: When insert or remove a node, consider how it will affect existing nodes. Some nodes will need nextNode link updated
 
