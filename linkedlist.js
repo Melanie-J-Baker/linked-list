@@ -62,7 +62,19 @@ export const LinkedList = () => {
         size--;
         return popped;
     }
+
     // contains(value) returns true if the passed in value is in the list and otherwise returns false.
+    const contains = (value) => {
+        let current = head;
+        while (current !== null) {
+            if (current.value === value) {
+                return true;
+            }
+            current = current.nextNode;
+        }
+        return false;
+    }
+
     // find(value) returns the index of the node containing value, or null if not found.
     // toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
     return {
@@ -72,7 +84,8 @@ export const LinkedList = () => {
         get head(){ return head; },
         tail,
         at,
-        pop
+        pop,
+        contains,
     }
 }
 
