@@ -100,6 +100,29 @@ export const LinkedList = () => {
         return `${string}null`;
     }
 
+    // insertAt(value, index) inserts a new node with the provided value at the given index.
+    const insertAt = (value, index) => {
+        if (index === 0) {
+            prepend(value);
+            return;
+        }
+        const prev = at(index - 1);
+        const newNode = Node(value, prev.nextNode);
+        prev.nextNode = newNode;
+        size++;
+    }
+
+    // removeAt(index) removes node at given index.
+    const removeAt = (index) => {
+        if (index === 0) {
+            head = head.nextNode;
+            return;
+        }
+        const prev = at(index - 1);
+        prev.nextNode = prev.nextNode.nextNode;
+        size--;
+    }
+
     return {
         append,
         prepend,
@@ -110,12 +133,9 @@ export const LinkedList = () => {
         pop,
         contains,
         find,
-        toString
+        toString,
+        insertAt,
+        removeAt
     }
 }
-
-//Extra Credit
-    // insertAt(value, index) inserts a new node with the provided value at the given index.
-    // removeAt(index) removes node at given index.
-//Tip: When insert or remove a node, consider how it will affect existing nodes. Some nodes will need nextNode link updated
 

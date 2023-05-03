@@ -1,4 +1,4 @@
-import LinkedList from "../linked-list/linkedlist";
+import LinkedList from "../linked-list/linkedlist.js";
 
 // Test
 const list = LinkedList();
@@ -10,6 +10,8 @@ list.prepend(10);
 list.prepend(9);
 list.prepend(8);
 list.pop();
+list.insertAt(3, 1);
+list.removeAt(4);
 
 console.log(list.size);
 console.log(list.head);
